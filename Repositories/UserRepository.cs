@@ -1,7 +1,8 @@
 
 using Dapper;
-using Microsoft.Data.SqlClient;
 using DapperApiDemo.Models;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace DapperApiDemo.Repositories
 {
@@ -25,11 +26,48 @@ namespace DapperApiDemo.Repositories
             return await connection.QueryFirstOrDefaultAsync<User>(sql, new { Username = username });
         }
 
+        //public async Task<int> Register(User user)
+        //{
+        //        var sql = @"
+        //    INSERT INTO Users 
+        //    (Username, Password, firstname, lastname, gender, phonenumber, IsActive, email)
+        //    VALUES 
+        //    (@Username, @Password, @firstname, @lastname, @gender, @phonenumber, @IsActive, @email)";
+        //    using var connection = CreateConnection();
+        //    return await connection.ExecuteAsync(sql, user);
+        //}
+
         public async Task<int> Register(User user)
         {
-            var sql = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
             using var connection = CreateConnection();
-            return await connection.ExecuteAsync(sql, user);
+
+            var parameters = new
+            {
+                user.Username,
+                user.Password,
+                user.firstname,
+                user.lastname,
+                user.gender,
+                user.phonenumber,
+                user.IsActive,
+                user.email
+            };
+
+            // Run the stored procedure and get the new UserId or -1 if duplicate
+            var userId = await connection.QuerySingleAsync<int>(
+                "spRegisterUser",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            return userId;
+        }
+
+        public async Task<bool> UpdatePassword(int userId, string newPassword)
+        {
+            var sql = "UPDATE Users SET Password = @Password WHERE UserId = @UserId";
+            using var connection = CreateConnection();
+            var rowsAffected = await connection.ExecuteAsync(sql, new { Password = newPassword, UserId = userId });
+            return rowsAffected > 0;
         }
     }
 }

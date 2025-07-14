@@ -1,9 +1,7 @@
-
-namespace DapperApiDemo.Models
+﻿namespace DapperApi.DTO
 {
-    public class User
+    public class RegisterRequest
     {
-        public int UserId { get; set; }
         public string Username { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string firstname { get; set; } = string.Empty;
@@ -11,6 +9,7 @@ namespace DapperApiDemo.Models
         public string gender { get; set; } = string.Empty;
         public string phonenumber { get; set; } = string.Empty;
         public string email { get; set; } = string.Empty;
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get; set; } = true;
     }
+
 }
