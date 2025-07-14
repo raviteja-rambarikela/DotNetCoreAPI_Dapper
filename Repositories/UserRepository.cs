@@ -19,12 +19,24 @@ namespace DapperApiDemo.Repositories
 
         private SqlConnection CreateConnection() => new SqlConnection(_connectionString);
 
+        //public async Task<User?> GetByUsername(string username)
+        //{
+        //    var sql = "SELECT * FROM Users WHERE Username = @Username";
+        //    using var connection = CreateConnection();
+        //    return await connection.QueryFirstOrDefaultAsync<User>(sql, new { Username = username });
+        //}
+
         public async Task<User?> GetByUsername(string username)
         {
-            var sql = "SELECT * FROM Users WHERE Username = @Username";
+            var sp = "spGetUserByUsername";
             using var connection = CreateConnection();
-            return await connection.QueryFirstOrDefaultAsync<User>(sql, new { Username = username });
+
+            return await connection.QueryFirstOrDefaultAsync<User>(
+                sp,
+                new { Username = username },
+                commandType: CommandType.StoredProcedure);
         }
+
 
         //public async Task<int> Register(User user)
         //{
