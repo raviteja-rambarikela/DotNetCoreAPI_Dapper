@@ -1,0 +1,57 @@
+# Ignore build results
+bin/
+obj/
+
+# Ignore Visual Studio folder
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# ASP.NET Secrets folder (optional)
+secrets.json
+
+# Build configuration
+*.dbmdl
+*.pdb
+*.cache
+*.log
+
+# IIS/Express settings
+*.launchSettings.json
+
+# EF Core migration snapshots (if using EF)
+Migrations/
+
+# SQL Server tools output
+*.sqlproj.user
+*.publish.xml
+
+# JetBrains Rider files (optional)
+.idea/
+*.sln.iml
+
+# Windows Thumbnail cache
+Thumbs.db
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+desktop.ini
+
+# Environment files (optional)
+.env
+*.env.*
+
+# Node/React client build artifacts (if present)
+node_modules/
+dist/
+build/
+
+# Uncomment if you're using a database output folder
+# DacPac/          # e.g., for *.dacpac outputs
+
+# Uncomment if you're using localdb or test DBs
+# *.mdf
+# *.ldf
