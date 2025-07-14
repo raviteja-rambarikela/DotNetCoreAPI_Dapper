@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperApi", "DapperApi.cspr
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DapperApi-DB", "..\DapperApi-DB\DapperApi-DB.sqlproj", "{E5264A18-3DD4-4047-A340-214DA4B5B4EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{252C0EEF-E6F4-42F5-A76D-3438DBB95BA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96178CBA-F9BF-45E8-A603-385D3D40E6D8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E5264A18-3DD4-4047-A340-214DA4B5B4EB} = {252C0EEF-E6F4-42F5-A76D-3438DBB95BA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F03DFFF2-AB46-4AFE-B9CC-C887D4E053E6}
