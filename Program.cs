@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using DapperApiDemo.Repositories;
+using DapperApi.IRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
