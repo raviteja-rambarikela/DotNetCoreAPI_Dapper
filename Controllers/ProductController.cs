@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using DapperApiDemo.Models;
-using DapperApiDemo.Repositories;
+using DapperApi.IRepositories;
 
 namespace DapperApiDemo.Controllers
 {

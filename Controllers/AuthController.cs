@@ -1,9 +1,9 @@
 
 using AutoMapper;
 using DapperApi.DTO;
+using DapperApi.IRepositories;
 using DapperApiDemo.Helpers;
 using DapperApiDemo.Models;
-using DapperApiDemo.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DapperApiDemo.Controllers

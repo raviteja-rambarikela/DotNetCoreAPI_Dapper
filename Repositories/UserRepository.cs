@@ -1,5 +1,6 @@
 
 using Dapper;
+using DapperApi.IRepositories;
 using DapperApiDemo.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;

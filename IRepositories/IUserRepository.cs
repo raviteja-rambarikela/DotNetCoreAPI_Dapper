@@ -1,7 +1,6 @@
-
 using DapperApiDemo.Models;
 
-namespace DapperApiDemo.Repositories
+namespace DapperApi.IRepositories
 {
     public interface IUserRepository
     {

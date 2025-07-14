@@ -2,6 +2,7 @@
 using Dapper;
 using Microsoft.Data.SqlClient;
 using DapperApiDemo.Models;
+using DapperApi.IRepositories;
 
 namespace DapperApiDemo.Repositories
 {
